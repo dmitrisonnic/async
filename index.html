@@ -6,8 +6,23 @@
   </head>
 
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div>
+        <!-- <img class="image" src=""></img> -->
+        <div class="name">{PEREMENNAIA.name}</div>
+        <div class="description">{PEREMENNAIA.description}</div>
+      </div>
+    </div>
 
-    <script src="src/index.js"></script>
+    <script src="src/index.js">
+        fetch("https://api.punkapi.com/v2/beers")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        return data[0]
+        console.log(data[0]);
+      });
+    </script>
   </body>
 </html>
